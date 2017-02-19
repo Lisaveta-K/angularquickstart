@@ -9,14 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Hero = (function () {
+    function Hero() {
+    }
+    return Hero;
+}());
+exports.Hero = Hero;
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'Angular';
+        this.title = 'The True Heroes';
+        this.hero = {
+            id: 12,
+            name: 'The Doctor',
+            age: 1200
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Hello {{name}}</h1>",
+            template: "<h1>{{title}}</h1><h2>{{hero.name}} - details.</h2>\n  <div><label>id: </label>{{hero.id}}</div>\n  <div>\n\t  <label>name:</label>\n\t  <input [(ngModel)]=\"hero.name\" placeholder=\"Name\">\n  </div>\n  <div>\n  <label>age:</label>\n  \t<input type=\"number\" value=\"{{hero.age}}\">\n  </div>",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
